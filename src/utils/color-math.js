@@ -54,9 +54,28 @@ function compareAll(
       }
     }
   }
+  // a length of 0 means that it didn't find a perfect a match
   if (color_matches.length === 0) {
+    for (let company of selectedCompanies) {
+      if (excludeCompany && excludeCompany === company) {
+        continue;
+      }
+      for (let i in colors[company]) {
+        color_matches.push([
+          company,
+          i,
+          getDelta(
+            rgb2lab(hex2rgb(selectedColor)),
+            rgb2lab(hex2rgb(colors[company][i]["hex"]))
+          ),
+        ]);
+      }
+    }
+    color_matches.sort(function (a, b) {
+      return a[2] - b[2];
+    });
   }
-  return color_matches;
+  return color_matches.slice(0, 5);
 }
 
 const ColorMath = {

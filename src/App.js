@@ -14,7 +14,15 @@ const selectedCompanies = [
   "hks",
 ];
 
-ColorMath.compareAll(colors, selectedCompanies, "94b2bd");
+const color_matches = ColorMath.compareAll(
+  colors,
+  selectedCompanies,
+  "94b2bd",
+  "benjamin-moore"
+);
+for (let i of color_matches) {
+  console.log(colors[i[0]][i[1]]);
+}
 
 function App() {
   return <p>Yes</p>;
