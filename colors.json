@@ -20330,7 +20330,7 @@
         {
             "hex": "#f8f8f4",
             "label": "PPU18-06",
-            "name": "Ultra Pure White\u00c2\u00ae"
+            "name": "Ultra Pure White"
         },
         {
             "hex": "#f0f0e9",
@@ -20430,7 +20430,7 @@
         {
             "hex": "#f8f8f4",
             "label": "PPU18-6",
-            "name": "Ultra Pure White\u00c2\u00ae"
+            "name": "Ultra Pure White"
         },
         {
             "hex": "#f0f0e9",
@@ -24965,7 +24965,7 @@
         {
             "hex": "#bdbabb",
             "label": "UL250-10",
-            "name": "Grape Cr\u00c3\u02c6me"
+            "name": "Grape Creme"
         },
         {
             "hex": "#d8cfd0",
@@ -26372,7 +26372,7 @@
         {
             "hex": "#e2513d",
             "label": "007",
-            "name": "Pi\u00f1ata"
+            "name": "Pinata"
         },
         {
             "hex": "#f8d8cd",
@@ -27742,7 +27742,7 @@
         {
             "hex": "#f4eed2",
             "label": "281",
-            "name": "Citron\u00e9e"
+            "name": "Citronee"
         },
         {
             "hex": "#f8f1cf",
@@ -28712,7 +28712,7 @@
         {
             "hex": "#7c8169",
             "label": "475",
-            "name": "Gal\u00e1pagos"
+            "name": "Galapagos"
         },
         {
             "hex": "#626550",
@@ -30887,7 +30887,7 @@
         {
             "hex": "#f1e1ca",
             "label": "910",
-            "name": "Cr\u00e8me"
+            "name": "Creme"
         },
         {
             "hex": "#f8efdc",
@@ -31292,7 +31292,7 @@
         {
             "hex": "#b8aa9d",
             "label": "991",
-            "name": "Gr\u00e9ge"
+            "name": "Grege"
         },
         {
             "hex": "#9f8d7d",
@@ -33162,7 +33162,7 @@
         {
             "hex": "#6d4652",
             "label": "1365",
-            "name": "Bord\u00e9aux"
+            "name": "Bordeaux"
         },
         {
             "hex": "#efe1e3",
@@ -35512,7 +35512,7 @@
         {
             "hex": "#fbf8dd",
             "label": "2022-70",
-            "name": "Cr\u00e8me"
+            "name": "Creme Brulee"
         },
         {
             "hex": "#fef6c5",
@@ -35547,7 +35547,7 @@
         {
             "hex": "#fcf9de",
             "label": "2023-70",
-            "name": "Cr\u00e8me"
+            "name": "Creme Fraiche"
         },
         {
             "hex": "#fdf6c5",
@@ -36002,7 +36002,7 @@
         {
             "hex": "#e3f6ea",
             "label": "2036-70",
-            "name": "Cr\u00e8me"
+            "name": "Creme De Mint"
         },
         {
             "hex": "#caeddb",
@@ -36762,7 +36762,7 @@
         {
             "hex": "#205864",
             "label": "2057-20",
-            "name": "Gal\u00e1pagos"
+            "name": "Galapagos Turquoise"
         },
         {
             "hex": "#264a53",
@@ -38187,7 +38187,7 @@
         {
             "hex": "#9c7e74",
             "label": "2098-40",
-            "name": "Caf\u00e9"
+            "name": "Cafe"
         },
         {
             "hex": "#795649",
@@ -38217,7 +38217,7 @@
         {
             "hex": "#c6aaa0",
             "label": "2099-50",
-            "name": "Caf\u00e9"
+            "name": "Cafe"
         },
         {
             "hex": "#a27e72",
@@ -39907,7 +39907,7 @@
         {
             "hex": "#a29e53",
             "label": "2147-30",
-            "name": "Jalape\u00f1o"
+            "name": "Jalapeno"
         },
         {
             "hex": "#959247",
@@ -40902,7 +40902,7 @@
         {
             "hex": "#cccecb",
             "label": "CSP-5",
-            "name": "Perspective\u00ae"
+            "name": "Perspective"
         },
         {
             "hex": "#9a9593",
@@ -41107,7 +41107,7 @@
         {
             "hex": "#54483b",
             "label": "CSP-210",
-            "name": "Caf\u00e9"
+            "name": "Cafe"
         },
         {
             "hex": "#e9e1cf",
@@ -41187,7 +41187,7 @@
         {
             "hex": "#a3805e",
             "label": "CSP-290",
-            "name": "Caf\u00e9"
+            "name": "Cafe"
         },
         {
             "hex": "#896449",
@@ -55868,7 +55868,7 @@
         {
             "hex": "#f1fde9",
             "label": "DE5595",
-            "name": "Cr\u00e8me de Menthe"
+            "name": "Creme de Menthe"
         },
         {
             "hex": "#e2f7d9",
@@ -60825,7 +60825,7 @@
         {
             "hex": "#f6dfc0",
             "label": "VS-9118",
-            "name": "Angel\u2019s Wing"
+            "name": "Angel's Wing"
         },
         {
             "hex": "#f6dfad",
@@ -104825,7 +104825,7 @@
             "hex": "#786957"
         },
         {
-            "name": "Prot\u00e9g\u00e9 Bronze",
+            "name": "Protege Bronze",
             "label": 6153,
             "hex": "#66543E"
         },
@@ -105000,7 +105000,7 @@
             "hex": "#64695C"
         },
         {
-            "name": "Shade\u2010Grown",
+            "name": "Shade-Grown",
             "label": 6188,
             "hex": "#4E5147"
         },
@@ -105490,7 +105490,7 @@
             "hex": "#D2B6BE"
         },
         {
-            "name": "Ros\u00e9",
+            "name": "Rose",
             "label": 6290,
             "hex": "#B995A1"
         },
@@ -107070,7 +107070,7 @@
             "hex": "#C4633E"
         },
         {
-            "name": "Jalape\u00f1o",
+            "name": "Jalapeno",
             "label": 6629,
             "hex": "#B1533C"
         },
@@ -107425,7 +107425,7 @@
             "hex": "#DAD790"
         },
         {
-            "name": "M\u00e9lange Green",
+            "name": "Melange Green",
             "label": 6710,
             "hex": "#C4C476"
         },
@@ -107930,7 +107930,7 @@
             "hex": "#968DB8"
         },
         {
-            "name": "Forget\u2010Me\u2010Not",
+            "name": "Forget-Me-Not",
             "label": 6824,
             "hex": "#716998"
         },
@@ -108105,7 +108105,7 @@
             "hex": "#EB882C"
         },
         {
-            "name": "Sol\u00e9",
+            "name": "Sole",
             "label": 6896,
             "hex": "#F7DDA1"
         },
@@ -108480,7 +108480,7 @@
             "hex": "#6F6459"
         },
         {
-            "name": "Well\u2010Bred Brown",
+            "name": "Well-Bred Brown",
             "label": 7027,
             "hex": "#564537"
         },
@@ -109075,7 +109075,7 @@
             "hex": "#E2D3BF"
         },
         {
-            "name": "Cr\u00e8me",
+            "name": "Creme",
             "label": 7556,
             "hex": "#F4E8D2"
         },
@@ -109090,7 +109090,7 @@
             "hex": "#F3E9D7"
         },
         {
-            "name": "D\u00e9cor White",
+            "name": "Decor White",
             "label": 7559,
             "hex": "#F2E5CF"
         },
@@ -109340,7 +109340,7 @@
             "hex": "#679199"
         },
         {
-            "name": "Aqua\u2010Sphere",
+            "name": "Aqua-Sphere",
             "label": 7613,
             "hex": "#9CB0B3"
         },
@@ -110060,7 +110060,7 @@
             "hex": "#B57466"
         },
         {
-            "name": "Mel\u00f3n Meloso",
+            "name": "Melon Meloso",
             "label": 9007,
             "hex": "#F2B88C"
         },
@@ -110175,7 +110175,7 @@
             "hex": "#C4B47D"
         },
         {
-            "name": "Lim\u00f3n Fresco",
+            "name": "Limon Fresco",
             "label": 9030,
             "hex": "#CEBC55"
         },
@@ -110290,7 +110290,7 @@
             "hex": "#90BDBD"
         },
         {
-            "name": "Agua Fr\u00eda",
+            "name": "Agua Fria",
             "label": 9053,
             "hex": "#9FC5CC"
         },
@@ -110365,7 +110365,7 @@
             "hex": "#AFA5C7"
         },
         {
-            "name": "Berry Frapp\u00e9",
+            "name": "Berry Frappe",
             "label": 9068,
             "hex": "#B3A1C6"
         },
@@ -110475,12 +110475,12 @@
             "hex": "#917864"
         },
         {
-            "name": "Cara\u00efbe",
+            "name": "Caraibe",
             "label": 9090,
             "hex": "#785F4C"
         },
         {
-            "name": "Half\u2010Caff",
+            "name": "Half-Caff",
             "label": 9091,
             "hex": "#604C3D"
         },
@@ -110560,7 +110560,7 @@
             "hex": "#946E48"
         },
         {
-            "name": "\u00dcber Umber",
+            "name": "Uber Umber",
             "label": 9107,
             "hex": "#7B5838"
         },
@@ -110645,7 +110645,7 @@
             "hex": "#9F8E71"
         },
         {
-            "name": "Verde Marr\u00f3n",
+            "name": "Verde Marron",
             "label": 9124,
             "hex": "#877459"
         },
@@ -110930,7 +110930,7 @@
             "hex": "#E8DECD"
         },
         {
-            "name": "Rojo Marr\u00f3n",
+            "name": "Rojo Marron",
             "label": 9182,
             "hex": "#4B3029"
         },
@@ -129211,7 +129211,7 @@
             "hex": "#f8ebee"
         },
         {
-            "name": "Naivet\u00e9",
+            "name": "Naivete",
             "label": "7001-21",
             "hex": "#f7efec"
         },
@@ -130076,7 +130076,7 @@
             "hex": "#fddeb9"
         },
         {
-            "name": "Cr\u00e9me Br\u00fbl\u00e9e",
+            "name": "Creme Brulee",
             "label": "2008-6C",
             "hex": "#f6ddc1"
         },
@@ -130311,7 +130311,7 @@
             "hex": "#bd8865"
         },
         {
-            "name": "Caf\u00e9 Miel",
+            "name": "Cafe Miel",
             "label": "2008-7C",
             "hex": "#b48e6f"
         },
@@ -130326,7 +130326,7 @@
             "hex": "#b2977e"
         },
         {
-            "name": "Corner Caf\u00e9",
+            "name": "Corner Cafe",
             "label": "3003-7C",
             "hex": "#b88d60"
         },
@@ -131251,7 +131251,7 @@
             "hex": "#7e7f5a"
         },
         {
-            "name": "Green Jalape\u00f1o",
+            "name": "Green Jalapeno",
             "label": "6005-6C",
             "hex": "#858757"
         },
@@ -133666,7 +133666,7 @@
             "hex": "#c5bba8"
         },
         {
-            "name": "Frapp\u00e9",
+            "name": "Frappe",
             "label": "6003-1B",
             "hex": "#bfbaaf"
         },
@@ -134491,7 +134491,7 @@
             "hex": "#9bbab7"
         },
         {
-            "name": "Caf\u00e9 Blue",
+            "name": "Cafe Blue",
             "label": "5001-4A",
             "hex": "#8b9c9b"
         },
@@ -135186,7 +135186,7 @@
             "hex": "#979492"
         },
         {
-            "name": "Gray Expos\u00e9",
+            "name": "Gray Expose",
             "label": "5007-2A",
             "hex": "#9b9d94"
         },
@@ -136185,7 +136185,7 @@
         {
             "hex": "#ccbab0",
             "label": "C-138",
-            "name": "Souffl\u221a\u00a9"
+            "name": "Souffle"
         },
         {
             "hex": "#b4a095",
@@ -137835,7 +137835,7 @@
         {
             "hex": "#c0d2cb",
             "label": "C-468",
-            "name": "D\u221a\u00a9j\u221a\u2020 vu"
+            "name": "Deja vu"
         },
         {
             "hex": "#abc2bc",
@@ -141585,7 +141585,7 @@
         {
             "hex": "#c4adb8",
             "label": "C-1218",
-            "name": "Desire\u221a\u00a9"
+            "name": "Desire"
         },
         {
             "hex": "#b49ba8",
@@ -147505,7 +147505,7 @@
         {
             "hex": "#7a6b57",
             "label": "K-937",
-            "name": "Cr\u00cbme de Caramel"
+            "name": "Creme de Caramel"
         },
         {
             "hex": "#998c7a",
@@ -148390,7 +148390,7 @@
         {
             "hex": "#8a7268",
             "label": "K-1114",
-            "name": "Mocha Caf\u00c8"
+            "name": "Mocha Cafe"
         },
         {
             "hex": "#ac9992",
