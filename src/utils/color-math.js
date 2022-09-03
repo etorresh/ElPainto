@@ -37,12 +37,32 @@ function getDelta(lab1, lab2) {
   return deltaE.getDeltaE();
 }
 
-function compareAll(colors, selected) {}
+function compareAll(
+  colors,
+  selectedCompanies,
+  selectedColor,
+  excludeCompany = null
+) {
+  const color_matches = [];
+  for (let company of selectedCompanies) {
+    if (excludeCompany && excludeCompany === company) {
+      continue;
+    }
+    for (let i in colors[company]) {
+      if (colors[company][i]["hex"] === selectedColor) {
+        color_matches.push([company, i, 0]);
+      }
+    }
+  }
+  if (color_matches.length === 0) {
+  }
+  return color_matches;
+}
 
 const ColorMath = {
   rgb2lab: rgb2lab,
   hex2rgb: hex2rgb,
-  getDelta: getDelta,
+  compareAll: compareAll,
 };
 
 export default ColorMath;

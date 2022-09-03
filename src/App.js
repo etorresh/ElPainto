@@ -2,8 +2,19 @@ import "./App.css";
 import ColorMath from "./utils/color-math";
 
 const colors = require("./utils/colors");
+const selectedCompanies = [
+  "avery",
+  "sherwin-williams",
+  "benjamin-moore",
+  "behr",
+  "ikea",
+  "toyo",
+  "trumatch",
+  "vista",
+  "hks",
+];
 
-console.log(ColorMath.rgb2lab([233, 233, 299]));
+ColorMath.compareAll(colors, selectedCompanies, "94b2bd");
 
 function App() {
   return <p>Yes</p>;
