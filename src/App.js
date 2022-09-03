@@ -20,9 +20,6 @@ const color_matches = ColorMath.compareAll(
   "94b2bd",
   "benjamin-moore"
 );
-for (let i of color_matches) {
-  console.log(colors[i[0]][i[1]]);
-}
 
 function App() {
   return <p>Yes</p>;

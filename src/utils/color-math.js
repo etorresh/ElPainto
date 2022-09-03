@@ -32,6 +32,10 @@ function hex2rgb(hex) {
   return [r, g, b];
 }
 
+function rgb2hex(r, g, b) {
+  return ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
 function getDelta(lab1, lab2) {
   var deltaE = new dE00(lab1, lab2);
   return deltaE.getDeltaE();
@@ -79,7 +83,7 @@ function compareAll(
 }
 
 const ColorMath = {
-  rgb2lab: rgb2lab,
+  rgb2hex: rgb2hex,
   hex2rgb: hex2rgb,
   compareAll: compareAll,
 };
