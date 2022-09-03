@@ -1,8 +1,9 @@
 import "./App.css";
 import ColorMath from "./utils/color-math";
 
-const hex = "#708238";
-console.log(ColorMath.hex2rgb(hex.slice(1)));
+const colors = require("./utils/colors");
+
+console.log(ColorMath.rgb2lab([233, 233, 299]));
 
 function App() {
   return <p>Yes</p>;

@@ -20,7 +20,7 @@ function rgb2lab(rgb) {
   y = y > 0.008856 ? Math.pow(y, 1 / 3) : 7.787 * y + 16 / 116;
   z = z > 0.008856 ? Math.pow(z, 1 / 3) : 7.787 * z + 16 / 116;
 
-  return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
+  return { L: 116 * y - 16, A: 500 * (x - y), B: 200 * (y - z) };
 }
 
 function hex2rgb(hex) {
@@ -36,6 +36,8 @@ function getDelta(lab1, lab2) {
   var deltaE = new dE00(lab1, lab2);
   return deltaE.getDeltaE();
 }
+
+function compareAll(colors, selected) {}
 
 const ColorMath = {
   rgb2lab: rgb2lab,
