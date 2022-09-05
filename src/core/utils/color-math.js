@@ -83,8 +83,7 @@ function compareAll(
 }
 
 const ColorMath = {
-  rgb2hex: rgb2hex,
-  hex2rgb: hex2rgb,
+  rgb2hex: rgb2hex, 
   compareAll: compareAll,
 };
 

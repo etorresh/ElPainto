@@ -1,0 +1,72 @@
+.header {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(38, 50, 56, 0.16),
+    0px 4px 8px rgba(38, 50, 56, 0.08);
+}
+
+.logo {
+  margin-left: 10px;
+  height: 64px;
+  width: 64px;
+}
+
+.title {
+  margin-left: 10px;
+  color: #2d3436;
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.dot {
+  margin-right: 10px;
+  height: 6px;
+  width: 6px;
+  background-color: #fdcb6e;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.margin {
+  min-width: 10px;
+  max-width: 178px;
+  flex: 1 0 0;
+}
+
+.github {
+  cursor: pointer;
+  margin-left: 40px;
+  margin-right: 50px;
+  width: 44px;
+  height: 40px;
+  background-color: #6c5ce7;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.cv {
+  cursor: pointer;
+  margin-left: 40px;
+  margin-right: 50px;
+  width: 33px;
+  height: 33px;
+  padding-right: 10px;
+  padding-left: 9px;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  background-color: #6c5ce7;
+  border-radius: 5px;
+}
+
+.links {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+@media screen and (max-width: 610px) {
+  .links {
+    display: none;
+  }
+}
