@@ -11,6 +11,16 @@ function Box(props) {
         return "0 0 0 5%";
       case 4:
         return "0 0 5% 0";
+      case 5:
+        return "0 5% 5% 0";
+      case 6:
+        return "0 0 5% 0";
+      case 7:
+        return "0 0 5% 5%";
+      case 8:
+        return "5% 0 0 5%";
+      case 9:
+        return "5% 5% 5% 5%";
     }
   };
 

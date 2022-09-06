@@ -93,9 +93,32 @@ function Home() {
   if (size.width <= 1100) {
     corners = [1, 2, 3, 4, 0, 0];
     shownSize = 4;
+    if (shownColors.length < 4) {
+      corners[1] = 5;
+      corners[2] = 7;
+    }
+    if (shownColors.length < 3) {
+      corners[0] = 8;
+    }
   } else {
     corners = [1, 0, 2, 3, 0, 4];
     shownSize = 6;
+    if (shownColors.length < 6) {
+      corners[2] = 5;
+      corners[4] = 6;
+    }
+    if (shownColors.length < 5) {
+      corners[3] = 7;
+    }
+    if (shownColors.length < 4) {
+      corners[0] = 8;
+    }
+  }
+  if (shownColors.length < 3) {
+    corners[1] = 5;
+  }
+  if (shownColors.length < 2) {
+    corners[0] = 9;
   }
   useEffect(() => {
     let foundColors = [];
