@@ -86,6 +86,16 @@ function Home() {
     { company: "dic", index: 186 },
     { company: "hks", index: 177 },
   ]);
+  const size = useWindowSize();
+  let corners = null;
+  let shownSize = 6;
+  if (size.width <= 1100) {
+    corners = [1, 2, 3, 4, 0, 0];
+    shownSize = 4;
+  } else {
+    corners = [1, 0, 2, 3, 0, 4];
+    shownSize = 6;
+  }
   return (
     <div className="home">
       <div className="description">
@@ -115,15 +125,37 @@ function Home() {
         </div>
       </div>
       <div className="box-wrapper">
-        {shownColors.map((color) => (
+        {shownColors.slice(0, shownSize).map((color, index) => (
           <Box
             key={color.company + color.index}
             company={displayCompany(color.company)}
             color={colors[color.company][color.index]}
+            corner={corners[index]}
           ></Box>
         ))}
       </div>
     </div>
   );
+}
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowSize;
 }
 export default Home;
