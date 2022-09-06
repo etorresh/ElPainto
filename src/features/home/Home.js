@@ -88,6 +88,7 @@ function Home() {
   ]);
   const [filter, setFilter] = useState("");
   const size = useWindowSize();
+  const [selectedColor, setSelectedColor] = useState();
   let corners = null;
   let shownSize = 6;
   if (size.width <= 1100) {
@@ -140,6 +141,7 @@ function Home() {
     } else if (filter.charAt(0) === "(") {
       console.log("it's rgb");
     } else if (filter.charAt(0) === "#") {
+      foundColors = [{}];
       console.log("its hex");
     } else {
       let matches = [];
@@ -177,6 +179,9 @@ function Home() {
     }
     setShownColors(foundColors.slice(0, 6));
   }, [filter]);
+  function boxClick(index) {
+    console.log(shownColors[index]);
+  }
   return (
     <div className="home">
       <div className="description">
@@ -213,6 +218,7 @@ function Home() {
       <div className="box-wrapper">
         {shownColors.slice(0, shownSize).map((color, index) => (
           <Box
+            onClick={() => boxClick(index)}
             key={color.company + color.index}
             company={displayCompany(color.company)}
             color={colors[color.company][color.index]}

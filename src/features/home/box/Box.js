@@ -30,6 +30,7 @@ function Box(props) {
 
   return (
     <div
+      onClick={props.onClick}
       className="box"
       style={{
         backgroundColor: "#" + props.color.hex,
