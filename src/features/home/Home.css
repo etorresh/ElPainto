@@ -37,6 +37,8 @@ h2 {
 
 .search-wrap {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .examples-wrap {
@@ -44,12 +46,13 @@ h2 {
   flex-direction: column;
   justify-content: center;
   color: #868686;
+  color: rgba(134, 134, 134, 0.8);
   font-weight: 00;
 }
 
 .examples-root {
   position: absolute;
-  margin-left: 260px;
+  margin-left: 525px;
   margin-top: 16px;
 }
 
@@ -75,5 +78,15 @@ h2 {
   .box-wrapper {
     grid-template-columns: 150px 150px;
     grid-template-rows: 150px 150px;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .examples-root {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    width: 100vw;
   }
 }
