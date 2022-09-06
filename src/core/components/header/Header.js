@@ -6,11 +6,12 @@ import img_cv from "../../../assets/curriculum__profile__resume.svg";
 function Header() {
   return (
     <div className="header">
-      <img className="logo" src={img_logo} alt="El Painto Logo"></img>
-      <h1 className="title">El Painto</h1>
-      <span className="margin"></span>
+      <div className="title-wrap">
+        <img className="logo" src={img_logo} alt="El Painto Logo"></img>
+        <h1 className="title">El Painto</h1>
+      </div>
       <div className="links">
-        <span className="dot"></span>
+        <span id="dot-1" className="dot"></span>
         <img className="cv" src={img_cv} alt="link to resume"></img>
         <span className="dot"></span>
         <img
@@ -18,7 +19,7 @@ function Header() {
           src={img_github}
           alt="link to source code"
         ></img>
-        <span className="dot"></span>
+        <span id="dot-3" className="dot"></span>
       </div>
     </div>
   );
