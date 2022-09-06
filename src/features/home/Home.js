@@ -98,9 +98,9 @@ function Home() {
     shownSize = 6;
   }
   useEffect(() => {
-    let color_matches = [];
+    let foundColors = [];
     if (filter === "") {
-      color_matches = [
+      foundColors = [
         { company: "sherwin-williams", index: 1299 },
         { company: "avery", index: 334 },
         { company: "benjamin-moore", index: 800 },
@@ -113,19 +113,40 @@ function Home() {
     } else if (filter.charAt(0) === "#") {
       console.log("its hex");
     } else {
+      let matches = [];
       for (let company in colors) {
         for (let index in colors[company]) {
           if (
             colors[company][index].name
-              .toLowerCase()
-              .includes(filter.toLowerCase())
+              .toString()
+              .toLocaleLowerCase()
+              .includes(filter.toLocaleLowerCase()) ||
+            colors[company][index].label
+              .toString()
+              .toLocaleLowerCase()
+              .includes(filter.toLocaleLowerCase())
           ) {
-            color_matches.push({ company: company, index: index });
-          } 
+            matches.push({ company: company, index: index });
+          }
         }
       }
+      for (let [i, val] of matches.entries()) {
+        if (
+          colors[val.company][val.index].name.toString().toLocaleLowerCase() ===
+            filter.toLocaleLowerCase() ||
+          colors[val.company][val.index].label
+            .toString()
+            .toLocaleLowerCase() === filter.toLocaleLowerCase()
+        ) {
+          foundColors.push(val);
+          matches.splice(i, 1);
+        }
+      }
+      if (foundColors.length < 6) {
+        foundColors = [...foundColors, ...matches];
+      }
     }
-    setShownColors(color_matches.slice(0, 6));
+    setShownColors(foundColors.slice(0, 6));
   }, [filter]);
   return (
     <div className="home">
