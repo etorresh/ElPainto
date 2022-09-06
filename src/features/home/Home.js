@@ -88,7 +88,7 @@ function Home() {
   ]);
   const [filter, setFilter] = useState("");
   const size = useWindowSize();
-  const [selectedColor, setSelectedColor] = useState();
+  const [selectedColor, setSelectedColor] = useState("");
   let corners = null;
   let shownSize = 6;
   if (size.width <= 1100) {
@@ -139,10 +139,18 @@ function Home() {
         { company: "hks", index: 177 },
       ];
     } else if (filter.charAt(0) === "(") {
-      console.log("it's rgb");
+      let rgb = filter.replace("(", "").replace(")", "").split(",");
+      setSelectedColor({
+        hex:
+          "#" +
+          ColorMath.rgb2hex(
+            parseInt(rgb[0]),
+            parseInt(rgb[1]),
+            parseInt(rgb[2])
+          ),
+      });
     } else if (filter.charAt(0) === "#") {
-      foundColors = [{}];
-      console.log("its hex");
+      setSelectedColor({ hex: filter });
     } else {
       let matches = [];
       for (let company in colors) {
@@ -180,8 +188,13 @@ function Home() {
     setShownColors(foundColors.slice(0, 6));
   }, [filter]);
   function boxClick(index) {
-    console.log(shownColors[index]);
+    setSelectedColor(shownColors[index]);
   }
+  useEffect(() => {
+    if (selectedColor.hasOwnProperty("hex") && selectedColor.hex !== "") {
+      console.log(selectedColor.hex);
+    }
+  }, [selectedColor]);
   return (
     <div className="home">
       <div className="description">
