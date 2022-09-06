@@ -86,6 +86,7 @@ function Home() {
     { company: "dic", index: 186 },
     { company: "hks", index: 177 },
   ]);
+  const [filter, setFilter] = useState("");
   const size = useWindowSize();
   let corners = null;
   let shownSize = 6;
@@ -96,6 +97,36 @@ function Home() {
     corners = [1, 0, 2, 3, 0, 4];
     shownSize = 6;
   }
+  useEffect(() => {
+    let color_matches = [];
+    if (filter === "") {
+      color_matches = [
+        { company: "sherwin-williams", index: 1299 },
+        { company: "avery", index: 334 },
+        { company: "benjamin-moore", index: 800 },
+        { company: "behr", index: 3117 },
+        { company: "dic", index: 186 },
+        { company: "hks", index: 177 },
+      ];
+    } else if (filter.charAt(0) === "(") {
+      console.log("it's rgb");
+    } else if (filter.charAt(0) === "#") {
+      console.log("its hex");
+    } else {
+      for (let company in colors) {
+        for (let index in colors[company]) {
+          if (
+            colors[company][index].name
+              .toLowerCase()
+              .includes(filter.toLowerCase())
+          ) {
+            color_matches.push({ company: company, index: index });
+          } 
+        }
+      }
+    }
+    setShownColors(color_matches.slice(0, 6));
+  }, [filter]);
   return (
     <div className="home">
       <div className="description">
@@ -106,7 +137,12 @@ function Home() {
         <h2>by RGB/HEX code.</h2>
       </div>
       <div className="search-wrap">
-        <input autoFocus className="search" type="text"></input>
+        <input
+          autoFocus
+          className="search"
+          type="text"
+          onChange={(event) => setFilter(event.target.value)}
+        ></input>
         <div className="examples-root" style={{ display: "flex" }}>
           <div className="examples-wrap">
             <p className="example" style={{ fontWeight: "800" }}>
