@@ -6,6 +6,77 @@ import Box from "./box/Box";
 
 const colors = require("./../../core/utils/colors.json");
 
+function displayCompany(company) {
+  switch (company) {
+    case "avery": {
+      return "Avery";
+    }
+    case "behr": {
+      return "Behr";
+    }
+    case "benjamin-moore": {
+      return "Benjamin Moore";
+    }
+    case "colorhouse": {
+      return "Colorhouse";
+    }
+    case "dic": {
+      return "DIC";
+    }
+    case "dunn-edwards": {
+      return "Dunn Edwards";
+    }
+    case "dutch": {
+      return "Dutch Boy";
+    }
+    case "farrow-ball": {
+      return "Farrow & Ball";
+    }
+    case "hks": {
+      return "HKS";
+    }
+    case "hl": {
+      return "Hallman Lindsay";
+    }
+    case "ikea": {
+      return "IKEA";
+    }
+    case "kilz": {
+      return "Kilz";
+    }
+    case "kobra": {
+      return "Kobra";
+    }
+    case "mpc": {
+      return "Matthews";
+    }
+    case "neenah": {
+      return "Neenah Paper Co.";
+    }
+    case "ppg": {
+      return "PGG";
+    }
+    case "ral": {
+      return "RAL";
+    }
+    case "sherwin-williams": {
+      return "Sherwin Williams";
+    }
+    case "toyo": {
+      return "TOYO";
+    }
+    case "trumatch": {
+      return "TRUMATCH";
+    }
+    case "valspar": {
+      return "Valspar";
+    }
+    case "vista": {
+      return "Vista";
+    }
+  }
+}
+
 function Home() {
   const [shownColors, setShownColors] = useState([
     { company: "sherwin-williams", index: 1299 },
@@ -15,13 +86,6 @@ function Home() {
     { company: "dic", index: 186 },
     { company: "hks", index: 177 },
   ]);
-  const size = useWindowSize();
-  let corners = null;
-  if (size.width <= 1100) {
-    corners = [1, 2, 3, 4, 0, 0];
-  } else {
-    corners = [1, 0, 2, 3, 0, 4];
-  }
   return (
     <div className="home">
       <div className="description">
@@ -36,7 +100,7 @@ function Home() {
         {shownColors.map((color) => (
           <Box
             key={color.company + color.index}
-            company={color.company}
+            company={displayCompany(color.company)}
             color={colors[color.company][color.index]}
           ></Box>
         ))}
@@ -44,27 +108,4 @@ function Home() {
     </div>
   );
 }
-
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  return windowSize;
-}
-
 export default Home;
