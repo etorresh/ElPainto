@@ -100,6 +100,12 @@ function Home() {
     if (shownColors.length < 3) {
       corners[0] = 8;
     }
+    if (size.width <= 550) {
+      corners[0] = 10;
+      corners[1] = 11;
+      corners[2] = 11;
+      corners[3] = 7;
+    }
   } else {
     corners = [1, 0, 2, 3, 0, 4];
     shownSize = 6;
