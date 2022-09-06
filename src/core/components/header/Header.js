@@ -12,13 +12,20 @@ function Header() {
       </div>
       <div className="links">
         <span id="dot-1" className="dot"></span>
-        <img className="cv" src={img_cv} alt="link to resume"></img>
+        <a href="https://www.etorresh.com/" target="_blank">
+          <img className="cv" src={img_cv} alt="link to resume"></img>
+        </a>
         <span className="dot"></span>
-        <img
-          className="github"
-          src={img_github}
-          alt="link to source code"
-        ></img>
+        <a
+          href="https://github.com/etorresh/color-cross-reference"
+          target="_blank"
+        >
+          <img
+            className="github"
+            src={img_github}
+            alt="link to source code"
+          ></img>
+        </a>
         <span id="dot-3" className="dot"></span>
       </div>
     </div>
