@@ -35,6 +35,28 @@ h2 {
   grid-template-rows: 235px 235px;
 }
 
+.search-wrap {
+  display: flex;
+}
+
+.examples-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #868686;
+  font-weight: 00;
+}
+
+.examples-root {
+  position: absolute;
+  margin-left: 260px;
+  margin-top: 16px;
+}
+
+.example {
+  margin: 0;
+}
+
 @media screen and (max-width: 1100px) {
   .box-wrapper {
     grid-template-columns: 356px 356px;
