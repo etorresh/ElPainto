@@ -1,8 +1,27 @@
+import { useState, useEffect } from "react";
 import "./Home.css";
+import ColorMath from "../../core/utils/color-math";
 
 import Box from "./box/Box";
 
+const colors = require("./../../core/utils/colors.json");
+
 function Home() {
+  const [shownColors, setShownColors] = useState([
+    { company: "sherwin-williams", index: 1299 },
+    { company: "avery", index: 334 },
+    { company: "benjamin-moore", index: 800 },
+    { company: "behr", index: 3117 },
+    { company: "dic", index: 186 },
+    { company: "hks", index: 177 },
+  ]);
+  const size = useWindowSize();
+  let corners = null;
+  if (size.width <= 1100) {
+    corners = [1, 2, 3, 4, 0, 0];
+  } else {
+    corners = [1, 0, 2, 3, 0, 4];
+  }
   return (
     <div className="home">
       <div className="description">
@@ -14,15 +33,38 @@ function Home() {
       </div>
       <input autoFocus className="search" type="text"></input>
       <div className="box-wrapper">
-        <Box hex="#e6d0bd" corner={1}></Box>
-        <Box hex="#141b3c"></Box>
-        <Box hex="#01ba99" corner={2}></Box>
-        <Box hex="#e04396" corner={3}></Box>
-        <Box hex="#7444bb"></Box>
-        <Box hex="#f9dc13" corner={4}></Box>
+        {shownColors.map((color) => (
+          <Box
+            key={color.company + color.index}
+            company={color.company}
+            color={colors[color.company][color.index]}
+          ></Box>
+        ))}
       </div>
     </div>
   );
+}
+
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowSize;
 }
 
 export default Home;

@@ -1,5 +1,7 @@
+import "./Box.css";
+
 function Box(props) {
-  const corner = () => {
+  const roundBox = () => {
     switch (props.corner) {
       case 1:
         return "5% 0 0 0";
@@ -11,14 +13,24 @@ function Box(props) {
         return "0 0 5% 0";
     }
   };
+
   return (
     <div
       className="box"
       style={{
-        backgroundColor: props.hex,
-        borderRadius: corner(),
+        backgroundColor: "#" + props.color.hex,
+        borderRadius: roundBox(),
       }}
-    ></div>
+    >
+      <div className="info-wrap">
+        <div>
+          <p className="label">
+            {props.color.label} {props.color.name}
+          </p>
+          <p className="company">{props.company}</p>
+        </div>
+      </div>
+    </div>
   );
 }
 
