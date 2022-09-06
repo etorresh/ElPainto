@@ -99,7 +99,9 @@ function Home() {
         <input autoFocus className="search" type="text"></input>
         <div className="examples-root" style={{ display: "flex" }}>
           <div className="examples-wrap">
-            <p className="example">Search examples: </p>
+            <p className="example" style={{ fontWeight: "800" }}>
+              Search examples:{" "}
+            </p>
             <p className="example">● Agreeable Gray</p>
             <p className="example">● 7029</p>
           </div>
