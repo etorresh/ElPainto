@@ -2,12 +2,24 @@ import { useState, useEffect } from "react";
 import "./Home.css";
 import ColorMath from "../../core/utils/color-math";
 import ColorsBox from "../colors-box/ColorsBox";
+import ColorMatch from "../color-match/ColorMatch";
 
 const colors = require("./../../core/utils/colors.json");
 
 function Home() {
   const [filter, setFilter] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedColor, setSelectedColor] = useState();
+  function handleClick(color) {
+    setSelectedColor(color);
+  }
+  useEffect(() => {
+    console.log("select color");
+  }, [selectedColor]);
+  useEffect(() => {
+    if (selectedColor) {
+      setSelectedColor();
+    }
+  }, [filter]);
 
   return (
     <div className="home">
@@ -42,7 +54,15 @@ function Home() {
           </div>
         </div>
       </div>
-      <ColorsBox filter={filter} colors={colors}></ColorsBox>
+      {!selectedColor ? (
+        <ColorsBox
+          filter={filter}
+          colors={colors}
+          onClick={(color) => handleClick(color)}
+        ></ColorsBox>
+      ) : (
+        <ColorMatch></ColorMatch>
+      )}
     </div>
   );
 }

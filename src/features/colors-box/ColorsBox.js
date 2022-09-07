@@ -3,15 +3,14 @@ import "./ColorsBox.css";
 
 import Box from "./box/Box";
 
-// colors: static colors json, filter: string,
 function ColorBox(props) {
   const [shownColors, setShownColors] = useState([
-    { company: "sherwin-williams", index: 1299 },
-    { company: "avery", index: 334 },
-    { company: "benjamin-moore", index: 800 },
-    { company: "behr", index: 3117 },
-    { company: "dic", index: 186 },
-    { company: "hks", index: 177 },
+    { company: "sherwin-williams", index: "1299" },
+    { company: "avery", index: "334" },
+    { company: "benjamin-moore", index: "800" },
+    { company: "behr", index: "3117" },
+    { company: "dic", index: "186" },
+    { company: "hks", index: "177" },
   ]);
   const size = useWindowSize();
   const [corners, setCorners] = useState([]);
@@ -68,12 +67,12 @@ function ColorBox(props) {
     let foundColors = [];
     if (props.filter === "") {
       foundColors = [
-        { company: "sherwin-williams", index: 1299 },
-        { company: "avery", index: 334 },
-        { company: "benjamin-moore", index: 800 },
-        { company: "behr", index: 3117 },
-        { company: "dic", index: 186 },
-        { company: "hks", index: 177 },
+        { company: "sherwin-williams", index: "1299" },
+        { company: "avery", index: "334" },
+        { company: "benjamin-moore", index: "800" },
+        { company: "behr", index: "3117" },
+        { company: "dic", index: "186" },
+        { company: "hks", index: "177" },
       ];
     } else if (props.filter.charAt(0) === "(") {
       let rgb = props.filter.replace("(", "").replace(")", "").split(",");
@@ -131,7 +130,7 @@ function ColorBox(props) {
     <div className="box-wrapper">
       {shownColors.slice(0, smallScreen ? 4 : 6).map((color, index) => (
         <Box
-          onClick={() => console.log("click")}
+          onClick={() => props.onClick(color)}
           key={color.company + color.index}
           company={displayCompany(color.company)}
           color={props.colors[color.company][color.index]}
