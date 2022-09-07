@@ -1,4 +1,5 @@
 import "./Box.css";
+import ColorLabel from "../../shared/label/ColorLabel";
 
 function Box(props) {
   const roundBox = () => {
@@ -37,14 +38,11 @@ function Box(props) {
         borderRadius: roundBox(),
       }}
     >
-      <div className="info-wrap">
-        <div>
-          <p className="label">
-            {props.color.label} {props.color.name}
-          </p>
-          <p className="company">{props.company}</p>
-        </div>
-      </div>
+      <ColorLabel
+        label={props.color.label}
+        name={props.color.name}
+        company={props.company}
+      ></ColorLabel>
     </div>
   );
 }

@@ -1,6 +1,29 @@
 .match-wrap {
+  display: flex;
   margin-top: 40px;
   width: 1068px;
   height: 470px;
   border-radius: 2%;
+}
+
+@media screen and (max-width: 1100px) {
+  .match-wrap {
+    width: 712px;
+    height: 470px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .match-wrap {
+    width: 534px;
+    height: 334px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .match-wrap {
+    width: 300px;
+    height: 400px;
+    margin-top: 20px;
+  }
 }
