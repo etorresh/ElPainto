@@ -87,46 +87,59 @@ function Home() {
     { company: "hks", index: 177 },
   ]);
   const [filter, setFilter] = useState("");
-  const size = useWindowSize();
   const [selectedColor, setSelectedColor] = useState("");
-  let corners = null;
-  let shownSize = 6;
-  if (size.width <= 1100) {
-    corners = [1, 2, 3, 4, 0, 0];
-    shownSize = 4;
-    if (shownColors.length < 4) {
-      corners[1] = 5;
-      corners[2] = 7;
+  const size = useWindowSize();
+  const [corners, setCorners] = useState([]);
+  const [smallScreen, setSmallScreen] = useState(false);
+  useEffect(() => {
+    if (
+      (size.width <= 1100 && smallScreen) ||
+      (size.width > 1100 && !smallScreen)
+    ) {
+      return;
+    } else {
+      setSmallScreen((prev) => !prev);
+    }
+  }, [size]);
+  useEffect(() => {
+    let newCorners;
+    if (smallScreen) {
+      newCorners = [1, 2, 3, 4, 0, 0];
+      if (shownColors.length < 4) {
+        newCorners[1] = 5;
+        newCorners[2] = 7;
+      }
+      if (shownColors.length < 3) {
+        newCorners[0] = 8;
+      }
+      if (size.width <= 550) {
+        newCorners[0] = 10;
+        newCorners[1] = 11;
+        newCorners[2] = 11;
+        newCorners[3] = 7;
+      }
+    } else {
+      newCorners = [1, 0, 2, 3, 0, 4];
+      if (shownColors.length < 6) {
+        newCorners[2] = 5;
+        newCorners[4] = 6;
+      }
+      if (shownColors.length < 5) {
+        newCorners[3] = 7;
+      }
+      if (shownColors.length < 4) {
+        newCorners[0] = 8;
+      }
     }
     if (shownColors.length < 3) {
-      corners[0] = 8;
+      newCorners[1] = 5;
     }
-    if (size.width <= 550) {
-      corners[0] = 10;
-      corners[1] = 11;
-      corners[2] = 11;
-      corners[3] = 7;
+    if (shownColors.length < 2) {
+      newCorners[0] = 9;
     }
-  } else {
-    corners = [1, 0, 2, 3, 0, 4];
-    shownSize = 6;
-    if (shownColors.length < 6) {
-      corners[2] = 5;
-      corners[4] = 6;
-    }
-    if (shownColors.length < 5) {
-      corners[3] = 7;
-    }
-    if (shownColors.length < 4) {
-      corners[0] = 8;
-    }
-  }
-  if (shownColors.length < 3) {
-    corners[1] = 5;
-  }
-  if (shownColors.length < 2) {
-    corners[0] = 9;
-  }
+    setCorners([...newCorners]);
+  }, [shownColors, smallScreen]);
+
   useEffect(() => {
     let foundColors = [];
     if (filter === "") {
@@ -191,6 +204,7 @@ function Home() {
     setSelectedColor(shownColors[index]);
   }
   useEffect(() => {
+    console.log("selected color changed");
     if (selectedColor.hasOwnProperty("hex") && selectedColor.hex !== "") {
       console.log(selectedColor.hex);
     }
@@ -229,7 +243,7 @@ function Home() {
         </div>
       </div>
       <div className="box-wrapper">
-        {shownColors.slice(0, shownSize).map((color, index) => (
+        {shownColors.slice(0, smallScreen ? 4 : 6).map((color, index) => (
           <Box
             onClick={() => boxClick(index)}
             key={color.company + color.index}
