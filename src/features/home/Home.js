@@ -12,9 +12,7 @@ function Home() {
   function handleClick(color) {
     setSelectedColor(color);
   }
-  useEffect(() => {
-    console.log("select color");
-  }, [selectedColor]);
+
   useEffect(() => {
     if (selectedColor) {
       setSelectedColor();
@@ -61,7 +59,7 @@ function Home() {
           onClick={(color) => handleClick(color)}
         ></ColorsBox>
       ) : (
-        <ColorMatch></ColorMatch>
+        <ColorMatch colors={colors} selectedColor={selectedColor}></ColorMatch>
       )}
     </div>
   );

@@ -1,11 +1,15 @@
-import { render } from "@testing-library/react";
 import "./ColorMatch.css";
-function ColorMatch() {
+function ColorMatch(props) {
   return (
-    <>
-      <h1>Yes</h1>
-      <h1>Maybe</h1>
-    </>
+    <div
+      className="match-wrap"
+      style={{
+        backgroundColor:
+          "#" +
+          props.colors[props.selectedColor.company][props.selectedColor.index]
+            .hex,
+      }}
+    ></div>
   );
 }
 

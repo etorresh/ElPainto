@@ -4,14 +4,7 @@ import "./ColorsBox.css";
 import Box from "./box/Box";
 
 function ColorBox(props) {
-  const [shownColors, setShownColors] = useState([
-    { company: "sherwin-williams", index: "1299" },
-    { company: "avery", index: "334" },
-    { company: "benjamin-moore", index: "800" },
-    { company: "behr", index: "3117" },
-    { company: "dic", index: "186" },
-    { company: "hks", index: "177" },
-  ]);
+  const [shownColors, setShownColors] = useState([]);
   const size = useWindowSize();
   const [corners, setCorners] = useState([]);
   const [smallScreen, setSmallScreen] = useState(false);
