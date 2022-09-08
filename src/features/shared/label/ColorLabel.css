@@ -9,12 +9,13 @@
 
 .info-wrap {
   display: flex;
+  align-items: center;
   background-color: white;
   justify-content: center;
   align-items: center;
   text-align: center;
   width: 179px;
   height: 55px;
-  margin-bottom: 20px;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 0;
 }

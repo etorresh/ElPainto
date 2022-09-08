@@ -42,6 +42,7 @@ function Box(props) {
         label={props.color.label}
         name={props.color.name}
         company={props.company}
+        margin={true}
       ></ColorLabel>
     </div>
   );

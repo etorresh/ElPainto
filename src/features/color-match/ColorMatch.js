@@ -45,6 +45,7 @@ function ColorMatch(props) {
           company={selectedColor.company}
           label={selectedColor.label}
           name={selectedColor.name}
+          margin={false}
         ></ColorLabel>
       </div>
       <div></div>
