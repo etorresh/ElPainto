@@ -1,0 +1,21 @@
+.options-background {
+  display: flex;
+  flex-direction: column;
+  background-color: #2d3436;
+  color: white;
+  width: 480px;
+  height: 365px;
+  border-radius: 2% 2% 0 0;
+}
+
+.options-button {
+  width: 480px;
+  height: 50px;
+  margin: 0;
+  background-color: #6c5ce7;
+  border-radius: 0 0 5px 5px;
+  border: 0;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 25px;
+}

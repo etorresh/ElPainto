@@ -1,6 +1,7 @@
 import "./ColorMatch.css";
 import ColorLabel from "../shared/label/ColorLabel";
 import ColorMath from "../../core/utils/color-math";
+import Showcase from "./showcase/Showcase";
 
 function ColorMatch(props) {
   const selectedColor = {};
@@ -48,7 +49,7 @@ function ColorMatch(props) {
           margin={false}
         ></ColorLabel>
       </div>
-      <div></div>
+      <Showcase></Showcase>
     </div>
   );
 }
