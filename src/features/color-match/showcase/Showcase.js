@@ -26,7 +26,7 @@ const companies = [
   "Vista",
 ];
 
-function Showcase() {
+function Showcase(props) {
   const [selectedCompanies, setSelectedCompanies] = useState(
     new Array(22).fill(false)
   );
@@ -50,7 +50,12 @@ function Showcase() {
           </label>
         ))}
       </div>
-      <button className="options-button">Start Search</button>
+      <button
+        className="options-button"
+        onClick={() => props.onClick(selectedCompanies)}
+      >
+        Start Search
+      </button>
     </div>
   );
 }

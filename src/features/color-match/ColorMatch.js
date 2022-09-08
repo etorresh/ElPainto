@@ -5,6 +5,9 @@ import Showcase from "./showcase/Showcase";
 
 function ColorMatch(props) {
   const selectedColor = {};
+  function startSearch(companies) {
+    console.log("starting search");
+  }
   if (props.selectedColor.hasOwnProperty("hex")) {
     selectedColor.company = "custom";
     selectedColor.name = "";
@@ -49,7 +52,7 @@ function ColorMatch(props) {
           margin={false}
         ></ColorLabel>
       </div>
-      <Showcase></Showcase>
+      <Showcase onClick={startSearch}></Showcase>
     </div>
   );
 }
