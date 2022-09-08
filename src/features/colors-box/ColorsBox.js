@@ -3,6 +3,8 @@ import "./ColorsBox.css";
 
 import Box from "./box/Box";
 
+import ColorMath from "../../core/utils/color-math";
+
 function ColorBox(props) {
   const [shownColors, setShownColors] = useState([]);
   const size = useWindowSize();
@@ -68,19 +70,15 @@ function ColorBox(props) {
         { company: "hks", index: "177" },
       ];
     } else if (props.filter.charAt(0) === "(") {
-      let rgb = props.filter.replace("(", "").replace(")", "").split(",");
-      // SET SELECTED COLOR
-      //   setSelectedColor({
-      //     hex:
-      //       "#" +
-      //       ColorMath.rgb2hex(
-      //         parseInt(rgb[0]),
-      //         parseInt(rgb[1]),
-      //         parseInt(rgb[2])
-      //       ),
-      //   });
+      const rgb = props.filter
+        .replace("(", "")
+        .replace(")", "")
+        .trim()
+        .split(",");
+      props.onClick({
+        rgb: rgb,
+      });
     } else if (props.filter.charAt(0) === "#") {
-      // SET SELECTED COLOR
       props.onClick({ hex: props.filter });
     } else {
       let matches = [];

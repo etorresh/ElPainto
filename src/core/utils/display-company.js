@@ -66,6 +66,9 @@ function displayCompany(company) {
     case "vista": {
       return "Vista";
     }
+    case "custom": {
+      return "Custom Color";
+    }
   }
 }
 
