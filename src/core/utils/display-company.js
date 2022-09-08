@@ -46,7 +46,7 @@ function displayCompany(company) {
       return "Neenah Paper Co.";
     }
     case "ppg": {
-      return "PGG";
+      return "PPG";
     }
     case "ral": {
       return "RAL";
