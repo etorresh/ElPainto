@@ -4,6 +4,7 @@
   width: 1068px;
   height: 470px;
   border-radius: 2%;
+  align-items: center;
 }
 
 @media screen and (max-width: 1100px) {
@@ -26,4 +27,8 @@
     height: 400px;
     margin-top: 20px;
   }
+}
+
+.selected-label {
+  margin-left: calc(40% - 180px);
 }

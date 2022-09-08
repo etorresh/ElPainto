@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./ColorsBox.css";
-import displayCompany from "../../core/utils/display-company";
 
 import Box from "./box/Box";
 
@@ -82,7 +81,7 @@ function ColorBox(props) {
       //   });
     } else if (props.filter.charAt(0) === "#") {
       // SET SELECTED COLOR
-      //   setSelectedColor({ hex: props.filter });
+      props.onClick({ hex: props.filter });
     } else {
       let matches = [];
       for (let company in props.colors) {
@@ -126,7 +125,7 @@ function ColorBox(props) {
         <Box
           onClick={() => props.onClick(color)}
           key={color.company + color.index}
-          company={displayCompany(color.company)}
+          company={color.company}
           color={props.colors[color.company][color.index]}
           corner={corners[index]}
         ></Box>
