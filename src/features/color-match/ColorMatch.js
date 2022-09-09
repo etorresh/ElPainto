@@ -2,11 +2,12 @@ import "./ColorMatch.css";
 import ColorLabel from "../shared/label/ColorLabel";
 import ColorMath from "../../core/utils/color-math";
 import Showcase from "./showcase/Showcase";
+import { useState } from "react";
 
 function ColorMatch(props) {
   const selectedColor = {};
+  const [matches, setMatches] = useState();
   function startSearch(companies) {
-    // ColorMath.compareAll(props.colors, companies, props.selectedColor.hex);
     const parsedCompanies = [];
     let i = 0;
     for (let key in props.colors) {
@@ -15,12 +16,9 @@ function ColorMatch(props) {
       }
       i++;
     }
-    const matches = ColorMath.compareAll(
-      props.colors,
-      parsedCompanies,
-      selectedColor.hex
+    setMatches(
+      ColorMath.compareAll(props.colors, parsedCompanies, selectedColor.hex)
     );
-    console.log(matches);
   }
   if (props.selectedColor.hasOwnProperty("hex")) {
     selectedColor.company = "custom";
