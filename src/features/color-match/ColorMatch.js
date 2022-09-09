@@ -6,7 +6,21 @@ import Showcase from "./showcase/Showcase";
 function ColorMatch(props) {
   const selectedColor = {};
   function startSearch(companies) {
-    console.log("starting search");
+    // ColorMath.compareAll(props.colors, companies, props.selectedColor.hex);
+    const parsedCompanies = [];
+    let i = 0;
+    for (let key in props.colors) {
+      if (companies[i]) {
+        parsedCompanies.push(key);
+      }
+      i++;
+    }
+    const matches = ColorMath.compareAll(
+      props.colors,
+      parsedCompanies,
+      selectedColor.hex
+    );
+    console.log(matches);
   }
   if (props.selectedColor.hasOwnProperty("hex")) {
     selectedColor.company = "custom";

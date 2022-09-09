@@ -23,15 +23,15 @@
   color: #ffffff;
   font-weight: 800;
   font-size: 25px;
+  cursor: pointer;
 }
 
 .container {
   display: block;
   position: relative;
   padding-left: 30px;
-  margin-bottom: 6px;
   margin-left: 20px;
-  margin-top: 5px;
+  margin-top: 10px;
   cursor: pointer;
   font-size: 18px;
   -webkit-user-select: none;
