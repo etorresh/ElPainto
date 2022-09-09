@@ -1,0 +1,14 @@
+.matches-wrap {
+  margin-left: 75px;
+}
+
+.matches-background {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #2d3436;
+  color: white;
+  width: 480px;
+  height: 415px;
+  border-radius: 2%;
+}

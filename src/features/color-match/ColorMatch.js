@@ -2,11 +2,15 @@ import "./ColorMatch.css";
 import ColorLabel from "../shared/label/ColorLabel";
 import ColorMath from "../../core/utils/color-math";
 import Showcase from "./showcase/Showcase";
-import { useState } from "react";
+import Matches from "./matches/Matches";
+import { useEffect, useState } from "react";
 
 function ColorMatch(props) {
   const selectedColor = {};
-  const [matches, setMatches] = useState();
+  const [matches, setMatches] = useState([]);
+  useEffect(() => {
+    console.log(matches);
+  }, [matches]);
   function startSearch(companies) {
     const parsedCompanies = [];
     let i = 0;
@@ -64,7 +68,11 @@ function ColorMatch(props) {
           margin={false}
         ></ColorLabel>
       </div>
-      <Showcase onClick={startSearch}></Showcase>
+      {matches.length === 0 ? (
+        <Showcase onClick={startSearch}></Showcase>
+      ) : (
+        <Matches></Matches>
+      )}
     </div>
   );
 }
