@@ -3,14 +3,11 @@ import ColorLabel from "../shared/label/ColorLabel";
 import ColorMath from "../../core/utils/color-math";
 import Showcase from "./showcase/Showcase";
 import Matches from "./matches/Matches";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function ColorMatch(props) {
   const selectedColor = {};
   const [matches, setMatches] = useState([]);
-  useEffect(() => {
-    console.log(matches);
-  }, [matches]);
   function startSearch(companies) {
     const parsedCompanies = [];
     let i = 0;
@@ -27,8 +24,8 @@ function ColorMatch(props) {
   if (props.selectedColor.hasOwnProperty("hex")) {
     selectedColor.company = "custom";
     selectedColor.name = "";
-    selectedColor.label = props.selectedColor.hex;
-    selectedColor.hex = props.selectedColor.hex.substring(1);
+    selectedColor.label = props.selectedColor.hex.padEnd(7, "0");
+    selectedColor.hex = props.selectedColor.hex.padEnd(7, "0").substring(1);
   } else if (props.selectedColor.hasOwnProperty("rgb")) {
     const rgb = [0, 0, 0];
     let colorIndex = 0;
@@ -71,7 +68,7 @@ function ColorMatch(props) {
       {matches.length === 0 ? (
         <Showcase onClick={startSearch}></Showcase>
       ) : (
-        <Matches></Matches>
+        <Matches colors={props.colors} matches={matches}></Matches>
       )}
     </div>
   );
