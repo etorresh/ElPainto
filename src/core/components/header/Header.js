@@ -1,5 +1,5 @@
 import "./Header.css";
-import img_logo from "../../../assets/elpainto64.png";
+import img_logo from "../../../assets/elpainto64.webp";
 import img_github from "../../../assets/github.svg";
 import img_cv from "../../../assets/curriculum__profile__resume.svg";
 
