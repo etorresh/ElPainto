@@ -26,3 +26,12 @@
 .controls {
   display: flex;
 }
+
+@media screen and (max-width: 1100px) {
+  .matches-wrap {
+    margin-left: 50px;
+  }
+  .matches-background {
+    width: 400px;
+  }
+}
