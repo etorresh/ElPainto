@@ -108,7 +108,18 @@
 }
 
 @media screen and (max-width: 730px) {
-  .match-wrap {
+  .options-wrap {
+    margin-left: 30px;
+  }
+  .options-background {
+    width: 290px;
+    height: 284px;
+  }
+  .options-button {
+    width: 290px;
+  }
+  .container {
+    font-size: 12px;
   }
 }
 

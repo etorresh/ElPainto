@@ -35,3 +35,13 @@
     width: 400px;
   }
 }
+
+@media screen and (max-width: 730px) {
+  .matches-wrap {
+    margin-left: 53px;
+  }
+  .matches-background {
+    width: 267px;
+    height: 334px;
+  }
+}
