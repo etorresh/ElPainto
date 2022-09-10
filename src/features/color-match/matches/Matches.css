@@ -45,3 +45,12 @@
     height: 334px;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .matches-wrap {
+    margin-left: 0;
+  }
+  .matches-background {
+    width: 300px;
+  }
+}
