@@ -10,10 +10,10 @@ function Matches(props) {
     ];
   }, [shownMatch]);
   function clickHandle(value) {
-    if (shownMatch + value === 5) {
+    if (shownMatch + value === props.matches.length) {
       setShownMatch(0);
     } else if (shownMatch + value === -1) {
-      setShownMatch(4);
+      return;
     } else {
       setShownMatch(shownMatch + value);
     }
@@ -27,7 +27,14 @@ function Matches(props) {
         }}
       >
         <div className="controls">
-          <p className="arrow" onClick={() => clickHandle(-1)}>
+          <p
+            className="arrow"
+            onClick={() => clickHandle(-1)}
+            style={{
+              opacity: shownMatch === 0 ? "0" : "1",
+              cursor: shownMatch === 0 ? "default" : "pointer",
+            }}
+          >
             {"<"}
           </p>
           <ColorLabel
@@ -36,7 +43,15 @@ function Matches(props) {
             company={props.matches[shownMatch][0]}
             delta={props.matches[shownMatch][2]}
           ></ColorLabel>
-          <p className="arrow" onClick={() => clickHandle(1)}>
+          <p
+            className="arrow"
+            onClick={() => clickHandle(1)}
+            style={{
+              opacity: shownMatch === props.matches.length - 1 ? "0" : "1",
+              cursor:
+                shownMatch === props.matches.length - 1 ? "default" : "pointer",
+            }}
+          >
             {">"}
           </p>
         </div>
