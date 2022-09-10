@@ -9,6 +9,15 @@ function Matches(props) {
       props.matches[shownMatch][1]
     ];
   }, [shownMatch]);
+  function clickHandle(value) {
+    if (shownMatch + value === 5) {
+      setShownMatch(0);
+    } else if (shownMatch + value === -1) {
+      setShownMatch(4);
+    } else {
+      setShownMatch(shownMatch + value);
+    }
+  }
   return (
     <div className="matches-wrap">
       <div
@@ -17,13 +26,20 @@ function Matches(props) {
           backgroundColor: "#" + match.hex,
         }}
       >
-        <p className="arrow">{"<"}</p>
-        <ColorLabel
-          label={match.label}
-          name={match.name}
-          company={props.matches[shownMatch][0]}
-        ></ColorLabel>
-        <p className="arrow">{">"}</p>
+        <div className="controls">
+          <p className="arrow" onClick={() => clickHandle(-1)}>
+            {"<"}
+          </p>
+          <ColorLabel
+            label={match.label}
+            name={match.name}
+            company={props.matches[shownMatch][0]}
+            delta={props.matches[shownMatch][2]}
+          ></ColorLabel>
+          <p className="arrow" onClick={() => clickHandle(1)}>
+            {">"}
+          </p>
+        </div>
       </div>
     </div>
   );

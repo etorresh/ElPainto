@@ -4,7 +4,7 @@
 
 .matches-background {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 480px;
   height: 415px;
   border-radius: 2%;
@@ -17,7 +17,12 @@
   font-weight: 800;
   margin: 10px;
   color: yellow;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #2d3436, 1px -1px 0 #2d3436, -1px 1px 0 #2d3436,
+    1px 1px 0 #2d3436;
   cursor: pointer;
+  user-select: none;
+}
+
+.controls {
+  display: flex;
 }

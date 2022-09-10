@@ -5,14 +5,27 @@ function ColorLabel(props) {
   return (
     <div
       className="info-wrap"
-      style={{ marginBottom: props.margin ? "20px" : "0px" }}
+      style={{
+        marginBottom: props.margin ? "20px" : "0px",
+        height: props.delta ? "85px" : "55px",
+      }}
     >
-      <div>
-        <p className="label">
-          {props.label} {props.name}
+      <p className="label">
+        {props.label} {props.name}
+      </p>
+      <p className="company">{displayCompany(props.company)}</p>
+      {props.delta && (
+        <p
+          className="delta"
+          style={{
+            color:
+              props.delta <= 1 ? "green" : props.delta <= 4 ? "orange" : "red",
+          }}
+        >
+          {" "}
+          Delta: {props.delta.toFixed(2)}
         </p>
-        <p className="company">{displayCompany(props.company)}</p>
-      </div>
+      )}
     </div>
   );
 }
