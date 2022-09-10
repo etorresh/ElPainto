@@ -11,12 +11,12 @@ function Matches(props) {
   }, [shownMatch]);
   function clickHandle(value) {
     if (shownMatch + value === props.matches.length) {
-      setShownMatch(0);
-    } else if (shownMatch + value === -1) {
       return;
-    } else {
-      setShownMatch(shownMatch + value);
     }
+    if (shownMatch + value === -1) {
+      return;
+    }
+    setShownMatch(shownMatch + value);
   }
   return (
     <div className="matches-wrap">
