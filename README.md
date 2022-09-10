@@ -4,4 +4,4 @@ El Painto
 </h1>
 A tool to match colors between paint companies or find the closest paint color to RGB/HEX values.
 
-Source code for [elpainto.com](elpainto.com).
+Source code for [elpainto.com](https://www.elpainto.com/).
