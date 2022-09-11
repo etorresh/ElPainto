@@ -9,55 +9,74 @@ function ColorBox(props) {
   const [shownColors, setShownColors] = useState([]);
   const size = useWindowSize();
   const [corners, setCorners] = useState([]);
-  const [smallScreen, setSmallScreen] = useState(false);
+  const [screenSize, setScreenSize] = useState(2);
   useEffect(() => {
     if (
-      (size.width <= 1100 && smallScreen) ||
-      (size.width > 1100 && !smallScreen)
+      (size.width > 1100 && screenSize === 2) ||
+      (size.width <= 1100 && size.width > 550 && screenSize === 1) ||
+      (size.width <= 550 && screenSize === 0)
     ) {
       return;
+    }
+    if (size.width > 1100) {
+      setScreenSize(2);
+    } else if (size.width > 550) {
+      setScreenSize(1);
     } else {
-      setSmallScreen((prev) => !prev);
+      setScreenSize(0);
     }
   }, [size]);
   useEffect(() => {
     let newCorners;
-    if (smallScreen) {
-      newCorners = [1, 2, 3, 4, 0, 0];
-      if (shownColors.length < 4) {
+    if (screenSize > 0) {
+      if (screenSize === 1) {
+        newCorners = [1, 2, 3, 4, 0, 0];
+        if (shownColors.length < 4) {
+          newCorners[1] = 5;
+          newCorners[2] = 7;
+        }
+        if (shownColors.length < 3) {
+          newCorners[0] = 8;
+        }
+        if (size.width <= 550) {
+          newCorners[0] = 10;
+          newCorners[1] = 11;
+          newCorners[2] = 11;
+          newCorners[3] = 7;
+        }
+      } else {
+        newCorners = [1, 0, 2, 3, 0, 4];
+        if (shownColors.length < 6) {
+          newCorners[2] = 5;
+          newCorners[4] = 6;
+        }
+        if (shownColors.length < 5) {
+          newCorners[3] = 7;
+        }
+        if (shownColors.length < 4) {
+          newCorners[0] = 8;
+        }
+      }
+      if (shownColors.length < 3) {
         newCorners[1] = 5;
+      }
+      if (shownColors.length < 2) {
+        newCorners[0] = 9;
+      }
+    } else {
+      newCorners = [10, 0, 0, 7, 0, 0];
+      if (shownColors.length < 4) {
         newCorners[2] = 7;
       }
       if (shownColors.length < 3) {
-        newCorners[0] = 8;
+        newCorners[1] = 7;
       }
-      if (size.width <= 550) {
-        newCorners[0] = 10;
-        newCorners[1] = 11;
-        newCorners[2] = 11;
-        newCorners[3] = 7;
+      if (shownColors.length < 2) {
+        newCorners[0] = 9;
       }
-    } else {
-      newCorners = [1, 0, 2, 3, 0, 4];
-      if (shownColors.length < 6) {
-        newCorners[2] = 5;
-        newCorners[4] = 6;
-      }
-      if (shownColors.length < 5) {
-        newCorners[3] = 7;
-      }
-      if (shownColors.length < 4) {
-        newCorners[0] = 8;
-      }
-    }
-    if (shownColors.length < 3) {
-      newCorners[1] = 5;
-    }
-    if (shownColors.length < 2) {
-      newCorners[0] = 9;
     }
     setCorners([...newCorners]);
-  }, [shownColors, smallScreen]);
+  }, [shownColors, screenSize]);
   useEffect(() => {
     let foundColors = [];
     if (props.filter === "") {
@@ -119,7 +138,7 @@ function ColorBox(props) {
   }, [props.filter]);
   return (
     <div className="box-wrapper">
-      {shownColors.slice(0, smallScreen ? 4 : 6).map((color, index) => (
+      {shownColors.slice(0, screenSize < 2 ? 4 : 6).map((color, index) => (
         <Box
           onClick={() => props.onClick(color)}
           key={color.company + color.index}
