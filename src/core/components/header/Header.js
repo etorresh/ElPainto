@@ -12,7 +12,7 @@ function Header() {
       </div>
       <div className="links">
         <span id="dot-1" className="dot"></span>
-        <a href="https://emilio.to/" target="_blank">
+        <a href="/">
           <img className="cv" src={img_cv} alt="link to my website"></img>
         </a>
         <span className="dot"></span>
