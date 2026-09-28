@@ -13,10 +13,12 @@
 }
 
 .description {
-  margin: 45px 0 0;
+  /* Room under the headline scales with its size: ~28px extra on desktop, ~8px on phones. */
+  margin: 45px 0 clamp(8px, 2vw, 28px);
   text-align: center;
   font-size: min(5vw, 60px);
   font-weight: 800;
+  line-height: 1.1;
 }
 
 .description .line {
