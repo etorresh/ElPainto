@@ -3,6 +3,13 @@
   color: #2d3436;
   flex-direction: column;
   align-items: center;
+  /* Centre vertically in the space under the 34px emilio.to bar. When the
+     content is taller than the screen, this does nothing and it scrolls. */
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: calc(100vh - 34px);
+  min-height: calc(100dvh - 34px);
+  padding-bottom: 45px; /* matches the headline's top margin */
 }
 
 .description {
